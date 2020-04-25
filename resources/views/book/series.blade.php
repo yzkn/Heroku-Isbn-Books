@@ -45,7 +45,7 @@
                                     <b>
                                         {{ $vol }}
                                     </b>
-                                    @if ($isOnline && !empty($book->summary__cover) && exif_imagetype($book->summary__cover))
+                                    @if (!empty($book->summary__cover))
                                         <img src="{{ $book->summary__cover }}" class="img-thumbnail summary__cover" />
                                     @endif
                                     <br />

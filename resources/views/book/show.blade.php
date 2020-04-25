@@ -18,7 +18,7 @@
                 <dd class="col-md-10">{{ $book->summary__isbn }}</dd>
                 <dt class="col-md-2">{{ __('Cover') }}</dt>
                 <dd class="col-md-10">
-                @if (!empty($book->summary__cover) && fsockopen(parse_url($book->summary__cover, PHP_URL_HOST), 80, $errno, $errstr, 10) && exif_imagetype($book->summary__cover))
+                @if (!empty($book->summary__cover))
                     <a href="{{ $book->summary__cover }}">
                         <img src="{{ $book->summary__cover }}" class="img-thumbnail summary__cover" />
                     </a>

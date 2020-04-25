@@ -23,8 +23,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::orderBy('summary__isbn', 'asc')->get();
-        $isOnline = isOnline('');
-        return view('book.index', ['books' => $books, 'isOnline' => $isOnline]);
+        return view('book.index', ['books' => $books]);
     }
 
     /**
@@ -221,12 +220,10 @@ class BookController extends Controller
             }
         }
 
-        $isOnline = isOnline('');
         return view(
             'book.series',
             [
                 'books_groupby_series' => $books_groupby_series,
-                'isOnline' => $isOnline,
                 'colspan' => $max_cols,
             ]
         );
@@ -263,12 +260,10 @@ class BookController extends Controller
             }
         }
 
-        $isOnline = isOnline('');
         return view(
             'book.series',
             [
                 'books_groupby_series' => $books_groupby_series,
-                'isOnline' => $isOnline,
                 'colspan' => $max_cols,
             ]
         );
